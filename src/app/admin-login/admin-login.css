@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fdf4e3; /* Soft warm beige outer background */
+  background-color: #e6e2df; /* Soft warm grey outer background */
   padding: 24px;
   overflow: hidden;
   font-family: var(--font-inter), sans-serif;
@@ -18,7 +18,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/panda_bg.png');
+  background-image: url('/cat_bg.jpeg');
   background-size: cover;
   background-position: center;
   z-index: 1;
@@ -33,7 +33,7 @@
   width: 100%;
   max-width: 960px;
   min-height: 680px;
-  background: #fdf4e3;
+  background: #e6e2df;
   border-radius: 40px;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
   overflow: hidden;
@@ -41,7 +41,7 @@
 
 .admin-login-left {
   width: 52%;
-  background: #fdf4e3;
+  background: #e6e2df;
   padding: 44px 56px;
   display: flex;
   flex-direction: column;
@@ -53,9 +53,9 @@
 .admin-login-right {
   width: 48%;
   position: relative;
-  background-image: url('/panda_bg.png');
+  background-image: url('/cat_bg.jpeg');
   background-size: cover;
-  background-position: center center;
+  background-position: right center;
   z-index: 1;
   overflow: hidden;
 }
@@ -73,21 +73,21 @@
 .admin-wave-1 {
   left: -2px; /* Smooth overlap with left warm beige form panel */
   z-index: 5;
-  color: #fdf4e3;
+  color: #e6e2df;
   filter: drop-shadow(4px 0 10px rgba(0, 0, 0, 0.15));
 }
 
 .admin-wave-2 {
   left: 14px;
   z-index: 4;
-  color: #f8edd1; /* Soft light gold */
+  color: #d6d2cf; /* Soft darker grey */
   filter: drop-shadow(4px 0 8px rgba(0, 0, 0, 0.2));
 }
 
 .admin-wave-3 {
   left: 28px;
   z-index: 3;
-  color: #d6af48; /* Metallic gold/bronze border */
+  color: #b5b0ad; /* Deeper border */
   filter: drop-shadow(4px 0 8px rgba(0, 0, 0, 0.35));
 }
 
