@@ -13,6 +13,7 @@ export default function AdminLoginPage() {
   const [error, setError] = useState('');
   const [emailLoading, setEmailLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
+  const [isPasswordFocused, setIsPasswordFocused] = useState(false);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -106,7 +107,7 @@ export default function AdminLoginPage() {
 
   return (
     <div className="admin-login-wrapper">
-      <div className="admin-login-bg-image"></div>
+      <div className={`admin-login-bg-image ${isPasswordFocused ? 'password-focused' : ''}`}></div>
 
       <div className="admin-login-card">
         {/* Left section containing the Admin Login Form */}
@@ -162,6 +163,8 @@ export default function AdminLoginPage() {
                   placeholder="Enter your password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  onFocus={() => setIsPasswordFocused(true)}
+                  onBlur={() => setIsPasswordFocused(false)}
                   required
                 />
                 <button
@@ -232,8 +235,8 @@ export default function AdminLoginPage() {
           </div>
         </div>
 
-        {/* Right section containing the 3D Panda background and wavy divider */}
-        <div className="admin-login-right">
+        {/* Right section containing the background and wavy divider */}
+        <div className={`admin-login-right ${isPasswordFocused ? 'password-focused' : ''}`}>
           <svg className="admin-wave-layer admin-wave-3" viewBox="0 0 100 1000" preserveAspectRatio="none">
             <path d="M0,0 L60,0 C30,150 90,300 20,450 C-10,550 70,750 40,1000 L0,1000 Z" fill="currentColor" />
           </svg>

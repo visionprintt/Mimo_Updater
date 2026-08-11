@@ -23,6 +23,12 @@
   background-position: center;
   z-index: 1;
   display: none; /* Shown on mobile screens behind card */
+  transition: background-image 0.3s ease-in-out;
+}
+
+.admin-login-bg-image.password-focused {
+  background-image: url('/new_cat_bg.jpeg');
+  background-position: 30% center;
 }
 
 /* Desktop Card Layout */
@@ -55,9 +61,15 @@
   position: relative;
   background-image: url('/cat_bg.jpeg');
   background-size: cover;
-  background-position: right center;
+  background-position: 40% center;
   z-index: 1;
   overflow: hidden;
+  transition: background-image 0.3s ease-in-out, background-position 0.3s ease-in-out;
+}
+
+.admin-login-right.password-focused {
+  background-image: url('/new_cat_bg.jpeg');
+  background-position: 30% center;
 }
 
 /* SVG Waves on left edge of image section pointing right */
