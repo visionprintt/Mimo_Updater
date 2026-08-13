@@ -235,7 +235,7 @@ export default function ReviewsPage() {
   return (
     <div className="animate-in" style={{ position: 'relative' }}>
       <div className="page-header" style={{ marginBottom: '1rem' }}>
-        <h1>📋 Work Reviews</h1>
+        <h1>Work Reviews</h1>
         <p>Review and provide feedback on completed work sessions</p>
       </div>
 
@@ -243,8 +243,8 @@ export default function ReviewsPage() {
       <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '24px', background: 'var(--bg-card)', padding: '16px', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
         <select value={statusFilter} onChange={e => setStatusFilter(e.target.value as FilterStatus)} style={{ padding: '8px 12px', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
           <option value="All">All Status</option>
-          <option value="Pending Review">🟡 Pending Review</option>
-          <option value="Reviewed">🟢 Reviewed</option>
+          <option value="Pending Review">Pending Review</option>
+          <option value="Reviewed">Reviewed</option>
         </select>
         <select value={timeFilter} onChange={e => setTimeFilter(e.target.value as FilterTime)} style={{ padding: '8px 12px', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
           <option value="All Time">All Time</option>
@@ -332,7 +332,7 @@ export default function ReviewsPage() {
                 {/* Monthly Payment Status Option */}
                 <div style={{ display: 'flex', gap: '16px', marginTop: '4px' }}>
                   <div style={{ flex: 1, padding: '12px', borderRadius: '8px', border: '1px dashed var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <div style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>📅 This Month</div>
+                    <div style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>This Month</div>
                     <select
                       value={curStatus}
                       onChange={(e) => handlePaymentStatusChange(session.userId, currentMonthKey, e.target.value as 'paid' | 'unpaid')}
@@ -349,12 +349,12 @@ export default function ReviewsPage() {
                         color: curStatus === 'paid' ? '#10b981' : '#f59e0b',
                       }}
                     >
-                      <option value="unpaid">⏳ Unpaid</option>
-                      <option value="paid">✅ Paid</option>
+                      <option value="unpaid">Unpaid</option>
+                      <option value="paid">Paid</option>
                     </select>
                   </div>
                   <div style={{ flex: 1, padding: '12px', borderRadius: '8px', border: '1px dashed var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <div style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>📅 Last Month</div>
+                    <div style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>Last Month</div>
                     <select
                       value={prevStatus}
                       onChange={(e) => handlePaymentStatusChange(session.userId, previousMonthKey, e.target.value as 'paid' | 'unpaid')}
