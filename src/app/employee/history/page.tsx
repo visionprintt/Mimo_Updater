@@ -47,7 +47,7 @@ export default function HistoryPage() {
     <>
       <div className={styles.topHeader}>
         <div className={styles.greeting}>
-          <h1>Your History 📜</h1>
+          <h1>Your History</h1>
           <p>Review your past sessions, daily hours, and paused duration.</p>
         </div>
       </div>
