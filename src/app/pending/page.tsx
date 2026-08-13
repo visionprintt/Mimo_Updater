@@ -43,7 +43,7 @@ export default function PendingPage() {
   return (
     <div className="pending-container">
       <div className="pending-card animate-in">
-        <div className="pending-icon">⏳</div>
+        <div className="pending-icon"></div>
         <h2>Account Pending Approval</h2>
         <p style={{ marginTop: '12px' }}>
           Your account has been created successfully and is awaiting approval from an

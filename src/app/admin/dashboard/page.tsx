@@ -258,7 +258,7 @@ export default function AnalyticsPage() {
     <div className="animate-in">
       <div className="page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div>
-          <h1>📈 Analytics</h1>
+          <h1>Analytics</h1>
           <p>Team performance and productivity insights</p>
         </div>
 
@@ -284,7 +284,7 @@ export default function AnalyticsPage() {
               }}
               onClick={() => setDateRange(range)}
             >
-              {range === 'week' ? '📅 Last 7 Days' : range === 'month' ? '📅 Last 30 Days' : '📅 All Time'}
+              {range === 'week' ? 'Last 7 Days' : range === 'month' ? 'Last 30 Days' : 'All Time'}
             </button>
           ))}
         </div>
@@ -305,7 +305,7 @@ export default function AnalyticsPage() {
               }}
               onClick={() => setActiveView(view)}
             >
-              {view === 'overview' ? '📊 Overview' : '🏢 By Department'}
+              {view === 'overview' ? 'Overview' : 'By Department'}
             </button>
           ))}
         </div>
@@ -512,7 +512,7 @@ export default function AnalyticsPage() {
                 className="btn btn-ghost" 
                 onClick={() => setCurrentDeptIndex(prev => prev === DEPARTMENTS.length - 1 ? 0 : prev + 1)}
               >
-                Next ▶
+                Next &gt;
               </button>
             </div>
 
@@ -591,7 +591,7 @@ export default function AnalyticsPage() {
                           disabled={currentWeekIndex === weeks.length - 1} 
                           onClick={() => setCurrentWeekIndex(p => Math.min(weeks.length - 1, p + 1))}
                         >
-                          ▶
+                          &gt;
                         </button>
                       </div>
 

@@ -268,10 +268,10 @@ export default function AdminEmployeeDashboardOverview() {
           </h1>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '8px', flexWrap: 'wrap' }}>
             <span style={{ backgroundColor: 'rgba(214, 155, 105, 0.15)', color: 'var(--mimo-primary)', padding: '4px 12px', borderRadius: '20px', fontSize: '13px', fontWeight: 600 }}>
-              🏢 Department: {employee.department || employee.departments?.join(', ') || 'Unassigned'}
+              Department: {employee.department || employee.departments?.join(', ') || 'Unassigned'}
             </span>
             <span style={{ backgroundColor: 'rgba(16, 185, 129, 0.15)', color: '#10b981', padding: '4px 12px', borderRadius: '20px', fontSize: '13px', fontWeight: 600, textTransform: 'capitalize' }}>
-              👤 Role: {employee.position || employee.role || 'Employee'}
+              Role: {employee.position || employee.role || 'Employee'}
             </span>
           </div>
         </div>

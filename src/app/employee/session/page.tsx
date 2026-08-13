@@ -160,7 +160,7 @@ export default function SessionPage() {
     <>
       <div className={styles.topHeader}>
         <div className={styles.greeting}>
-          <h1>Current Session ⏱️</h1>
+          <h1>Current Session</h1>
           <p>Manage your 3-hour session timer, pauses, and daily tasks.</p>
         </div>
       </div>
@@ -179,7 +179,7 @@ export default function SessionPage() {
             {activeSession ? (
               <>
                 <div className={`${styles.sessionTimeBox} ${isOnBreak ? styles.break : ''}`}>
-                  <div className={styles.sessionIcon}>⏱️</div>
+                  <div className={styles.sessionIcon}></div>
                   <div className={styles.sessionTimeInfo}>
                     <div className={styles.sessionTimeLabel}>Time Remaining (3h Limit)</div>
                     <div className={styles.sessionTimeValue}>{formatLiveTimer(Math.max(0, SESSION_DURATION_MS - currentElapsedMs))}</div>
@@ -213,7 +213,7 @@ export default function SessionPage() {
                       onClick={toggleBreak}
                       style={{ flex: 1, backgroundColor: isOnBreak ? '#10b981' : '#f97316' }}
                     >
-                      {isOnBreak ? '▶️ Continue' : '⏸ Pause'}
+                      {isOnBreak ? 'Continue' : 'Pause'}
                     </button>
                     <button 
                       className={styles.btnDanger} 
@@ -229,7 +229,7 @@ export default function SessionPage() {
               <div style={{ textAlign: 'center', padding: '2rem 0' }}>
                 <p style={{ color: '#64748b', marginBottom: '1rem' }}>You are currently offline.</p>
                 <button className={styles.btnPrimary} onClick={handleStartSession} style={{ margin: '0 auto' }}>
-                  ▶️ Start Session Now
+                  Start Session Now
                 </button>
               </div>
             )}
@@ -278,7 +278,7 @@ export default function SessionPage() {
                       value={t.title} 
                       onChange={(e) => updateTask(t.id, 'title', e.target.value)} 
                     />
-                    <button className={styles.removeTaskBtn} onClick={() => removeTask(t.id)}>🗑️</button>
+                    <button className={styles.removeTaskBtn} onClick={() => removeTask(t.id)}>Remove</button>
                   </div>
                 ))}
               </div>

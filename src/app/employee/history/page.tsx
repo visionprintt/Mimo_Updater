@@ -58,7 +58,7 @@ export default function HistoryPage() {
           <div className={styles.completedList}>
             {allSessions.map(session => (
               <div className={styles.completedItem} key={session.id} style={{ marginBottom: '1.5rem', borderBottom: '1px solid #e2e8f0', paddingBottom: '1.5rem' }}>
-                <div className={styles.completedIcon}>📅</div>
+                <div className={styles.completedIcon}></div>
                 <div className={styles.completedInfo}>
                   <div className={styles.completedTitle} style={{ fontSize: '1.1rem' }}>
                     {new Date(session.clockInTime).toLocaleDateString('en-GB', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}

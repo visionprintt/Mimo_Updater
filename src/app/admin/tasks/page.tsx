@@ -196,10 +196,10 @@ export default function AdminTasksPage() {
                           {t.status.replace('_', ' ').toUpperCase()}
                         </span>
                         {overdue && (
-                           <span style={{ fontSize: '12px', color: '#ef4444', fontWeight: 600 }}>🔴 Overdue by {delayDays}d</span>
+                           <span style={{ fontSize: '12px', color: '#ef4444', fontWeight: 600 }}>Overdue by {delayDays}d</span>
                         )}
                         {isCompletedLate && (
-                           <span style={{ fontSize: '12px', color: '#d97706', fontWeight: 600 }}>⚠️ Completed {delayDays}d late</span>
+                           <span style={{ fontSize: '12px', color: '#d97706', fontWeight: 600 }}>Completed {delayDays}d late</span>
                         )}
                       </div>
                     </td>

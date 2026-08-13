@@ -153,10 +153,10 @@ export interface WorkSession {
 
 export type Mood = 'frustrated' | 'neutral' | 'good' | 'fire';
 export const MOODS: { value: Mood; emoji: string; label: string }[] = [
-  { value: 'frustrated', emoji: '😤', label: 'Frustrated' },
-  { value: 'neutral', emoji: '😐', label: 'Neutral' },
-  { value: 'good', emoji: '😊', label: 'Good' },
-  { value: 'fire', emoji: '🔥', label: 'On Fire' },
+  { value: 'frustrated', emoji: '', label: 'Frustrated' },
+  { value: 'neutral', emoji: '', label: 'Neutral' },
+  { value: 'good', emoji: '', label: 'Good' },
+  { value: 'fire', emoji: '', label: 'On Fire' },
 ];
 
 // ─── UI State & Preferences ────────────────────────────────────────

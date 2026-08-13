@@ -107,7 +107,7 @@ export default function RegisterPage() {
             <h1>MIMO</h1>
           </div>
           <div className="auth-success">
-            <div style={{ fontSize: '48px', marginBottom: '16px' }}>✅</div>
+            <div style={{ fontSize: '48px', marginBottom: '16px' }}></div>
             <h3 style={{ marginBottom: '8px', fontSize: '1.25rem' }}>
               Registration Successful!
             </h3>

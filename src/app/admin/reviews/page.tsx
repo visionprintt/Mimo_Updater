@@ -262,7 +262,7 @@ export default function ReviewsPage() {
 
       {filteredSessions.length === 0 ? (
         <div className="empty-state glass-card-static">
-          <div className="empty-icon">✅</div>
+          <div className="empty-icon"></div>
           <h3>No work found</h3>
           <p>No completed sessions match your filters.</p>
         </div>
@@ -293,7 +293,7 @@ export default function ReviewsPage() {
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <span className={`badge badge-dept-${dept.toLowerCase().replace(/\s+/g, '-')}`}>{dept}</span>
                       <span style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
-                        🕒 {new Date(session.clockInTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} → {session.clockOutTime ? new Date(session.clockOutTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : 'N/A'}
+                        {new Date(session.clockInTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} → {session.clockOutTime ? new Date(session.clockOutTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : 'N/A'}
                       </span>
                     </div>
                   </div>
@@ -315,7 +315,7 @@ export default function ReviewsPage() {
                   </div>
                   <div>
                     <div style={{ fontSize: '12px', color: 'var(--text-secondary)', marginBottom: '4px' }}>Mood</div>
-                    <div style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{session.mood === 'frustrated' ? '😤' : session.mood === 'neutral' ? '😐' : session.mood === 'good' ? '😊' : session.mood === 'fire' ? '🔥' : 'N/A'}</div>
+                    <div style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{session.mood === 'frustrated' ? 'Frustrated' : session.mood === 'neutral' ? 'Neutral' : session.mood === 'good' ? 'Good' : session.mood === 'fire' ? 'Fire' : 'N/A'}</div>
                   </div>
                 </div>
 
@@ -371,8 +371,8 @@ export default function ReviewsPage() {
                         color: prevStatus === 'paid' ? '#10b981' : '#f59e0b',
                       }}
                     >
-                      <option value="unpaid">⏳ Unpaid</option>
-                      <option value="paid">✅ Paid</option>
+                      <option value="unpaid">Unpaid</option>
+                      <option value="paid">Paid</option>
                     </select>
                   </div>
                 </div>

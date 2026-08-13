@@ -13,12 +13,12 @@ import styles from './Dashboard.module.css';
 import { useSettingsStore } from '@/store/settingsStore';
 
 const NAV_ITEMS = [
-  { name: 'Dashboard', path: '/lead/dashboard', icon: '🏠' },
-  { name: 'My Team', path: '/lead/team', icon: '👥' },
-  { name: 'Attendance', path: '/lead/attendance', icon: '📅' },
-  { name: 'Tasks', path: '/lead/tasks', icon: '📋' },
-  { name: 'Reports', path: '/lead/reports', icon: '📈' },
-  { name: 'Profile', path: '/lead/profile', icon: '👤' },
+  { name: 'Dashboard', path: '/lead/dashboard' },
+  { name: 'My Team', path: '/lead/team' },
+  { name: 'Attendance', path: '/lead/attendance' },
+  { name: 'Tasks', path: '/lead/tasks' },
+  { name: 'Reports', path: '/lead/reports' },
+  { name: 'Profile', path: '/lead/profile' },
 ];
 
 export default function LeadDashboardLayout({ children }: { children: React.ReactNode }) {
@@ -73,9 +73,8 @@ export default function LeadDashboardLayout({ children }: { children: React.Reac
             <Link 
               key={item.path} 
               href={item.path}
-              className={`${styles.navItem} ${pathname === item.path ? styles.active : ''}`}
-            >
-              {item.icon} {item.name}
+              className={`${styles.navItem} ${pathname === item.path ? styles.active : ''}`}>
+              {item.name}
             </Link>
           ))}
         </div>
@@ -97,7 +96,7 @@ export default function LeadDashboardLayout({ children }: { children: React.Reac
           </div>
         </div>
         <div className={styles.signOutBtn} onClick={handleSignOut}>
-          🚪 Sign Out
+          Sign Out
         </div>
       </div>
 

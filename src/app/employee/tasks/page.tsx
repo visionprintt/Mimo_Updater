@@ -170,7 +170,7 @@ export default function TasksPage() {
     <>
       <div className={styles.topHeader}>
         <div className={styles.greeting}>
-          <h1>Tasks 📋</h1>
+          <h1>Tasks</h1>
           <p>Manage your current session tasks and long-term assignments.</p>
         </div>
       </div>
@@ -203,13 +203,13 @@ export default function TasksPage() {
                   {draftTasks.map(t => (
                     <div className={styles.completedItem} key={t.id} style={{ padding: '1rem', backgroundColor: '#f8fafc', borderRadius: '0.5rem', border: '1px solid #e2e8f0', display: 'flex', justifyItems: 'space-between', alignItems: 'center' }}>
                       <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flex: 1 }}>
-                        <div className={styles.completedIcon}>⏳</div>
+                        <div className={styles.completedIcon}></div>
                         <div className={styles.completedInfo}>
                           <div className={styles.completedTitle} style={{ fontSize: '1rem' }}>{t.title || 'Untitled Task'}</div>
                           <div className={styles.completedTime}>In Progress</div>
                         </div>
                       </div>
-                      <button onClick={() => handleRemoveSessionTask(t.id)} style={{ background: 'none', border: 'none', color: '#ef4444', cursor: 'pointer', fontSize: '1.25rem' }}>🗑️</button>
+                      <button onClick={() => handleRemoveSessionTask(t.id)} style={{ background: 'none', border: 'none', color: '#ef4444', cursor: 'pointer', fontSize: '1rem', padding: '0 8px' }}>Remove</button>
                     </div>
                   ))}
                 </div>
@@ -326,13 +326,13 @@ export default function TasksPage() {
                           {/* Computed Status Badges */}
                           {overdue && (
                             <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#ef4444', fontSize: '13px', fontWeight: 600, background: '#fee2e2', padding: '2px 8px', borderRadius: '4px' }}>
-                              🔴 Delayed by {delayDays} day{delayDays !== 1 ? 's' : ''}
+                              Delayed by {delayDays} day{delayDays !== 1 ? 's' : ''}
                             </div>
                           )}
                           
                           {isCompletedLate && (
                             <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#d97706', fontSize: '13px', fontWeight: 600, background: '#fef3c7', padding: '2px 8px', borderRadius: '4px' }}>
-                              ⚠️ Completed {delayDays} day{delayDays !== 1 ? 's' : ''} late
+                              Completed {delayDays} day{delayDays !== 1 ? 's' : ''} late
                             </div>
                           )}
                         </div>
