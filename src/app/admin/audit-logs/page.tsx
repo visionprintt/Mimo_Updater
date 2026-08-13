@@ -52,7 +52,7 @@ export default function AuditLogsPage() {
     <div className="animate-in">
       <div className="page-header">
         <div>
-          <h1>📝 Audit Logs</h1>
+          <h1>Audit Logs</h1>
           <p>Track important actions across the application.</p>
         </div>
       </div>

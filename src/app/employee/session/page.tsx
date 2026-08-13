@@ -204,7 +204,7 @@ export default function SessionPage() {
                     onClick={() => setShowSubmitModal(true)}
                     style={{ width: '100%', backgroundColor: '#ef4444' }}
                   >
-                    📝 Submit Work Log (Required)
+                    Submit Work Log (Required)
                   </button>
                 ) : (
                   <div style={{ display: 'flex', gap: '1rem' }}>

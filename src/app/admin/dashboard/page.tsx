@@ -351,7 +351,7 @@ export default function AnalyticsPage() {
           {/* Daily Activity Chart */}
           <div className="glass-card-static" style={{ marginBottom: '32px' }}>
             <h4 style={{ marginBottom: '20px', display:'flex', alignItems:'center', gap:'8px' }}>
-              <span style={{ fontSize: '20px' }}>📊</span> Daily Activity
+              Daily Activity
             </h4>
             <div style={{ 
               display: 'flex', alignItems: 'flex-end', gap: '8px', height: '200px', 
@@ -391,7 +391,7 @@ export default function AnalyticsPage() {
           {/* Global Leaderboard */}
           <div className="glass-card-static">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-              <h4>🏆 Leaderboard</h4>
+              <h4>Leaderboard</h4>
               <div style={{ position: 'relative', zIndex: 50 }}>
                 <button
                   className="form-select"
@@ -448,7 +448,7 @@ export default function AnalyticsPage() {
                     {hoursByUser.map(([userId, data], idx) => (
                       <tr key={userId}>
                         <td style={{ fontWeight: 700, color: idx < 3 ? 'var(--status-starred)' : 'var(--text-muted)' }}>
-                          {idx === 0 ? '🥇' : idx === 1 ? '🥈' : idx === 2 ? '🥉' : idx + 1}
+                          {idx + 1}
                         </td>
                         <td style={{ fontWeight: 500 }}>{data.name}</td>
                         <td><span className={`badge badge-dept-${data.dept.toLowerCase().replace(/\s+/g, '-')}`}>{data.dept}</span></td>
