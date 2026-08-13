@@ -193,7 +193,7 @@ export default function DashboardOverview() {
     <>
       <div className={styles.topHeader}>
         <div className={styles.greeting}>
-          <h1>Good Morning, {mimoUser?.displayName?.split(' ')[0] || 'there'}! 👋</h1>
+          <h1>Good Morning, {mimoUser?.displayName?.split(' ')[0] || 'there'}!</h1>
           <p>Here's your high-level overview for today.</p>
         </div>
         <div className={styles.headerControls}>
@@ -255,7 +255,7 @@ export default function DashboardOverview() {
             }
             window.location.href = '/employee/session';
           }}>
-            ▶️ {isWorking ? 'View Active Session' : 'Start Session'}
+            {isWorking ? 'View Active Session' : 'Start Session'}
           </button>
         </div>
       </div>

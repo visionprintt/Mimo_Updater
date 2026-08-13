@@ -118,7 +118,7 @@ export default function ProfilePage() {
     <>
       <div className={styles.topHeader}>
         <div className={styles.greeting}>
-          <h1>My Profile 👤</h1>
+          <h1>My Profile</h1>
           <p>View your employee information and account details.</p>
         </div>
       </div>
@@ -281,7 +281,7 @@ export default function ProfilePage() {
 
         <div>
           <div className={styles.card}>
-            <div className={styles.cardTitle}>Payment Status 💳</div>
+            <div className={styles.cardTitle}>Payment Status</div>
             <p style={{ color: '#64748b', fontSize: '0.875rem', marginBottom: '1.5rem' }}>
               Monthly salary & stipend payment status.
             </p>
@@ -311,7 +311,7 @@ export default function ProfilePage() {
                         fontWeight: 600,
                         textTransform: 'capitalize'
                       }}>
-                        {status === 'paid' ? '✅ Paid' : '⏳ Unpaid'}
+                        {status === 'paid' ? 'Paid' : 'Unpaid'}
                       </span>
                     );
                   })()}
@@ -348,7 +348,7 @@ export default function ProfilePage() {
                         fontWeight: 600,
                         textTransform: 'capitalize'
                       }}>
-                        {status === 'paid' ? '✅ Paid' : '⏳ Unpaid'}
+                        {status === 'paid' ? 'Paid' : 'Unpaid'}
                       </span>
                     );
                   })()}
