@@ -1,24 +1,30 @@
 import { NextResponse } from 'next/server';
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 
 export async function POST(request: Request) {
   try {
-    const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy');
-    
     const { email, displayName, role, department } = await request.json();
 
     if (!email || !displayName) {
       return NextResponse.json({ error: 'Missing email or display name' }, { status: 400 });
     }
 
-    if (!process.env.RESEND_API_KEY) {
-      console.warn('RESEND_API_KEY is not set. Email not sent.');
-      return NextResponse.json({ error: 'Email configuration is missing on the server.' }, { status: 500 });
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      console.warn('EMAIL_USER or EMAIL_PASS is not set. Email not sent.');
+      return NextResponse.json({ error: 'Email credentials are missing on the server.' }, { status: 500 });
     }
 
-    const { data, error } = await resend.emails.send({
-      from: 'Mimo <onboarding@resend.dev>', // Resend testing domain
-      to: [email],
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+
+    const mailOptions = {
+      from: `"Mimo" <${process.env.EMAIL_USER}>`,
+      to: email,
       subject: 'You have been invited to join Mimo!',
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eaeaea; border-radius: 8px;">
@@ -39,16 +45,13 @@ export async function POST(request: Request) {
           </p>
         </div>
       `,
-    });
+    };
 
-    if (error) {
-      console.error('Error sending email:', error);
-      return NextResponse.json({ error: error.message || 'Unknown Resend Error' }, { status: 500 });
-    }
+    await transporter.sendMail(mailOptions);
 
-    return NextResponse.json({ data });
-  } catch (error) {
-    console.error('Failed to parse request or send email', error);
-    return NextResponse.json({ error: 'Failed to send invitation' }, { status: 500 });
+    return NextResponse.json({ success: true });
+  } catch (error: any) {
+    console.error('Error sending email via Nodemailer:', error);
+    return NextResponse.json({ error: error.message || 'Failed to send invitation' }, { status: 500 });
   }
 }
