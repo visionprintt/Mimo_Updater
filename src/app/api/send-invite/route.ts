@@ -3,6 +3,7 @@ import nodemailer from 'nodemailer';
 
 export async function POST(request: Request) {
   try {
+    const origin = new URL(request.url).origin;
     const { email, displayName, role, department } = await request.json();
 
     if (!email || !displayName) {
@@ -36,7 +37,7 @@ export async function POST(request: Request) {
             Click the link below to accept your invitation and sign in using your Google account:
           </p>
           <div style="text-align: center; margin: 30px 0;">
-            <a href="${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/login" style="background-color: #0070f3; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 16px;">
+            <a href="${origin}/login" style="background-color: #0070f3; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 16px;">
               Accept Invitation
             </a>
           </div>
