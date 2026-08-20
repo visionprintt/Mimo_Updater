@@ -55,8 +55,9 @@ export default function ReviewsPage() {
       usrs.forEach(u => { uMap[u.uid] = u; });
       setUsersMap(uMap);
       
-      const completed = s.filter((x) => x.status !== 'active' && !adminUids.has(x.userId));
+      const completed = s.filter((x) => x.status !== 'active' && !adminUids.has(x.userId) && !!uMap[x.userId]);
       completed.sort((a, b) => new Date(b.clockInTime).getTime() - new Date(a.clockInTime).getTime());
+
       
       const stats: Record<string, UserMonthlyData> = {};
       const now = new Date();
