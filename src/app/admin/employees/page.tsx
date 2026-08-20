@@ -77,10 +77,12 @@ export default function EmployeesPage() {
           }),
         });
         if (!response.ok) {
-          console.error('Failed to send invitation email');
+          const errorData = await response.json();
+          alert(`Failed to send invitation email: ${errorData.error}`);
         }
       } catch (emailError) {
         console.error('Error calling send-invite API:', emailError);
+        alert('An unexpected error occurred while sending the email.');
       }
 
       setShowInviteModal(false);
@@ -119,7 +121,8 @@ export default function EmployeesPage() {
       });
 
       if (!response.ok) {
-        alert('Failed to resend invitation email. Make sure your RESEND_API_KEY is configured.');
+        const errorData = await response.json();
+        alert(`Failed to resend invitation email: ${errorData.error}`);
       } else {
         alert(`Invitation email successfully resent to ${inv.email}`);
       }
