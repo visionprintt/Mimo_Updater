@@ -62,6 +62,27 @@ export default function EmployeesPage() {
         invitedAt: new Date().toISOString()
       };
       await setDoc(doc(db, 'invitations', invite.email), invite);
+      
+      try {
+        const response = await fetch('/api/send-invite', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: invite.email,
+            displayName: invite.displayName,
+            role: invite.role,
+            department: invite.departments[0] || 'Frontend',
+          }),
+        });
+        if (!response.ok) {
+          console.error('Failed to send invitation email');
+        }
+      } catch (emailError) {
+        console.error('Error calling send-invite API:', emailError);
+      }
+
       setShowInviteModal(false);
       await createAuditLog({
         actorId: mimoUser.uid,
@@ -83,8 +104,29 @@ export default function EmployeesPage() {
   };
 
   const handleResendInvite = async (inv: Invitation) => {
-    alert(`An invitation email would be resent to ${inv.email}`);
-    // In a real app, this might trigger a Cloud Function to send the email again.
+    try {
+      const response = await fetch('/api/send-invite', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: inv.email,
+          displayName: inv.displayName,
+          role: inv.role,
+          department: inv.departments?.[0] || 'Frontend',
+        }),
+      });
+
+      if (!response.ok) {
+        alert('Failed to resend invitation email. Make sure your RESEND_API_KEY is configured.');
+      } else {
+        alert(`Invitation email successfully resent to ${inv.email}`);
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Error occurred while resending invitation.');
+    }
   };
 
   const handleRevokeInvite = async (email: string) => {
